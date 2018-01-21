@@ -1,15 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Main"
+             xmlns:d="clr-namespace:System;assembly=mscorlib"
              xmlns:local="clr-namespace:FirstApllicationEnsi"
              x:Class="FirstApllicationEnsi.MainPage">
+    <ContentPage.BackgroundColor>
+        <OnPlatform x:TypeArguments="Color"
+                    Android="GreenYellow"
+                    WinPhone="DeepSkyBlue"
+                    iOS="Red"></OnPlatform>
+    </ContentPage.BackgroundColor>
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                    Android="0,0,0,0"
+                    iOS="0,0,0,0"
+                    WinPhone="0,30,0,0"></OnPlatform>
+    </ContentPage.Padding>
+
     <!--<Button Text="Click Me ! "
                HorizontalOptions="Center"
                VerticalOptions="Center"
                Clicked="Button_OnClicked"/>-->
-    <StackLayout  HorizontalOptions="Center"
+    <!--<StackLayout 
                                                VerticalOptions="Center">
-        <!--<BoxView Color="Red"
+        --><!--<BoxView Color="Red"
                  Opacity="{Binding Source={x:Reference MySlider},
             Path=Value,
             StringFormat='Value is {0:F2}'}"
@@ -18,14 +33,46 @@
             Path=Value,
             StringFormat='Value is {0:F2}'}"
                
-                   />-->
+                   />--><!--
 
         <BoxView Color="Red"
                  Opacity="{Binding  Value}"
                ></BoxView>
-        <Label Text="{Binding Value,
-            StringFormat='Value is {0:F2}'}"  />
+        --><!--<Label Text="{Binding Source={x:Reference MyEntry},
+            Path=Text,
+            StringFormat='Value is {0:N0}'}"  />--><!--
 
-        <Slider  x:Name="MySlider" />
-    </StackLayout>
+        <Label x:Name="MyLabel" Text=""  />
+
+        --><!--<Slider  x:Name="MySlider" Maximum="30"  Minimum="15"/>-->
+        <!--<Stepper  x:Name="MySlider" Maximum="30"  Minimum="15" Increment="3" ></Stepper>-->
+        <!--<Entry Keyboard="Numeric"></Entry>-->
+        <!--<Entry Completed="Entry_OnCompleted" TextChanged="MyEntry_OnTextChanged" x:Name="MyEntry"></Entry>--><!--
+      
+    </StackLayout>-->
+    <!--<StackLayout>
+        <Editor VerticalOptions="FillAndExpand" BackgroundColor="Yellow" ></Editor>
+    </StackLayout>-->
+    <!--<StackLayout>-->
+    <!--<Picker x:Name="MyPicker" SelectedIndexChanged="Picker_OnSelectedIndexChanged">
+        <Picker.Items>
+            <x:String> Item number 1 </x:String>
+            <x:String>Item number 2</x:String>
+        </Picker.Items>
+    </Picker>-->
+        <!--<DatePicker ></DatePicker>-->
+        <!--<Label >
+            <Label.Text>
+                <OnPlatform x:TypeArguments="x:String"
+                            Android="Hello from Android"
+                            WinPhone="Hello From UWP "></OnPlatform>
+            </Label.Text>
+              <Label.TextColor>
+                <OnPlatform x:TypeArguments="Color"
+                            Android="AntiqueWhite"
+                            WinPhone="Wheat"></OnPlatform>
+              </Label.TextColor>
+        </Label>
+    </StackLayout>-->
+    <DatePicker MaximumDate="{x:Static d:DateTime.Today}" Format="dd-MMMMMMM-yyyy" MinimumDate="1 Jan 2000" Date="21 Jan 2018" DateSelected="DatePicker_OnDateSelected"></DatePicker>
 </ContentPage>

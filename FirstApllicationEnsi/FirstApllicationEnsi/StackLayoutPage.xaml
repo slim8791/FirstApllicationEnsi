@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="First Page"
              x:Class="FirstApllicationEnsi.StackLayoutPage"
              BackgroundColor="#127ac7">
     <ContentPage.Content>
@@ -31,7 +32,8 @@
 
             <Button Text="Login"
                     TextColor="White"
-                    BackgroundColor="#1dabf0"/>
+                    BackgroundColor="#1dabf0"
+                    Clicked="Button_OnClicked"/>
 
 
             <Button Text="Register"

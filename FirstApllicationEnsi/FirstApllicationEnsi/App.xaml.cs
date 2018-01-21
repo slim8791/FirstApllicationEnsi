@@ -13,7 +13,7 @@ namespace FirstApllicationEnsi
         {
             InitializeComponent();
 
-            MainPage = new PhoneKeyboard();
+            MainPage =new NavigationPage(new ListPage()) ;//new NavigationPage(new StackLayoutPage()); 
         }
 
         protected override void OnStart()

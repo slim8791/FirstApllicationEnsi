@@ -9,19 +9,24 @@ using Xamarin.Forms.Xaml;
 
 namespace FirstApllicationEnsi
 {
-    [XamlCompilation(XamlCompilationOptions.Skip)]
-    public partial class StackLayoutPage : ContentPage
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class SecondPage : ContentPage
     {
-        public StackLayoutPage()
+        public SecondPage()
         {
             InitializeComponent();
+        }
+
+        protected override bool OnBackButtonPressed()
+        {
+            return true;
         }
 
         private void Button_OnClicked(object sender, EventArgs e)
         {
 
-            //Navigation.PushAsync(new SecondPage());
-            Navigation.PushModalAsync(new SecondPage());
+          //  Navigation.PopAsync();
+            Navigation.PopModalAsync();
         }
     }
 }
